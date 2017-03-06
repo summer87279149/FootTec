@@ -1,0 +1,53 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - HHAlertView (0.1.0)
+  - JHUD (0.3.0)
+  - Just (0.5.7)
+  - KeyboardToolBar (1.0.0)
+  - Kingfisher (3.2.0)
+  - MBProgressHUD (1.0.0)
+  - NVActivityIndicatorView (3.0)
+  - SnapKit (3.0.2)
+  - SwiftyJSON (3.1.1)
+
+DEPENDENCIES:
+  - AFNetworking
+  - HHAlertView (~> 0.1.0)
+  - JHUD
+  - Just
+  - KeyboardToolBar (~> 1.0.0)
+  - Kingfisher
+  - MBProgressHUD
+  - NVActivityIndicatorView
+  - SnapKit (~> 3.0.2)
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  HHAlertView: 043766460ca18236a1e2fbbbdb396318d304d43d
+  JHUD: 17650f65045d9843a7ad19f6a0b1eac6c78a45d2
+  Just: d19e769d86b965e39ae58cb3c0cbad07706634a8
+  KeyboardToolBar: 4edd3a72568c481c035023b6e86ed993a5c68808
+  Kingfisher: 50407d1d5dbc34965009d425a286342ff36a84ea
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+
+PODFILE CHECKSUM: 7e79ca6f2f26a8c5a63cc5a5032cd2a71d4df37e
+
+COCOAPODS: 1.2.0.beta.1
