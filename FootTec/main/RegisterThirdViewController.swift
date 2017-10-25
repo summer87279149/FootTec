@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class RegisterThirdViewController: BaseUIViewController {
-
+    
     //记录点击的是第一个按钮还是第二个
     //1代表第一个，2代表第二个
     var clickWhich = 0
@@ -28,10 +28,10 @@ class RegisterThirdViewController: BaseUIViewController {
         image2.layer.borderWidth = 1
         image2.layer.cornerRadius = 3
         image2.layer.borderColor = FootFontColor.cgColor
-
+        
     }
-
-   //上传1
+    
+    //上传1
     @IBAction func upload1(_ sender: Any) {
         clickWhich = 1
         openActionSheet()
@@ -43,7 +43,7 @@ class RegisterThirdViewController: BaseUIViewController {
         openActionSheet()
     }
     //注册点击
-    @IBAction func regist(_ sender: Any) {        
+    @IBAction func regist(_ sender: Any) {
         let model = RegistInfoModel.sharedInstance
         model.printAll()
         if model.image1Url != nil{
@@ -54,10 +54,10 @@ class RegisterThirdViewController: BaseUIViewController {
                     
                     _ = self.navigationController?.popToRootViewController(animated: false)
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "RegisteOK"), object: nil)
-                }, fail: { (err) in
-                    hideHUDIn(view: self.view)
+                    }, fail: { (err) in
+                        hideHUDIn(view: self.view)
                 })
-
+                
             }else{
                 showHUDMessage("请上传身份证图片", to: self.view)
             }
@@ -66,7 +66,7 @@ class RegisterThirdViewController: BaseUIViewController {
         }
     }
     
-   //同意协议
+    //同意协议
     @IBAction func agree(_ sender: Any) {
         let vc = YinSiViewController(nibName: "YinSiViewController", bundle: Bundle.main)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -78,7 +78,7 @@ class RegisterThirdViewController: BaseUIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
 }
 extension RegisterThirdViewController :UIActionSheetDelegate,UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     
@@ -104,7 +104,7 @@ extension RegisterThirdViewController :UIActionSheetDelegate,UIImagePickerContro
     }
     
     func openCrama(){
-       let picker1 = UIImagePickerController()
+        let picker1 = UIImagePickerController()
         picker1.sourceType = .camera
         picker1.cameraDevice = .rear
         picker1.delegate = self
@@ -157,7 +157,7 @@ extension RegisterThirdViewController :UIActionSheetDelegate,UIImagePickerContro
             hideHUDIn(view: self.view)
             showHUDMessage("上传失败，请稍后尝试", to: self.view)
             NSL(err)
-    
+            
         })
     }
     

@@ -19,7 +19,8 @@ struct MyServicesList{
 	var techId : String!
 	var time : String!
 
-
+    
+    
 	/**
 	 * 用字典来初始化一个实例并设置各个属性值
 	 */

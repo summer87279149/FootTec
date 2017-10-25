@@ -15,6 +15,7 @@ class ForgetPwdViewController: BaseUIViewController {
     @IBOutlet weak var vertifyCode: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var phone: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "找回密码"
@@ -22,12 +23,12 @@ class ForgetPwdViewController: BaseUIViewController {
         KeyboardToolBar.register(password)
         KeyboardToolBar.register(phone)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "取消", target: self, action: #selector(cancel))
-        
-        
     }
+    
     func cancel(){
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
+    
     //发送验证码
     @IBAction func vCodeBtnClicked(_ sender: Any) {
         if !checkPhoneNumber(str: phone.text!) {
@@ -40,6 +41,7 @@ class ForgetPwdViewController: BaseUIViewController {
         }
         
     }
+    
     //确定找回密码
     @IBAction func findBtnClicked(_ sender: Any) {
         let bool = checkInfo()

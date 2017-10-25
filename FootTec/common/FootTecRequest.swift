@@ -9,43 +9,43 @@
 import UIKit
 
 //服务类型
-fileprivate let kServiceType = "http://121.40.108.71/zuliao/technician.php/Index/category"
+fileprivate let kServiceType = "http://xxj.yzszsf.com/technician.php/Index/category"
 //上传身份证
-fileprivate let kServiceUploadIdeCard = "http://121.40.108.71/zuliao/technician.php/User/uploadIdCard"
+fileprivate let kServiceUploadIdeCard = "http://xxj.yzszsf.com/technician.php/User/uploadIdCard"
 //注册
-fileprivate let kServiceRegister = "http://121.40.108.71/zuliao/technician.php/User/register"
+fileprivate let kServiceRegister = "http://xxj.yzszsf.com/technician.php/User/register"
 //发送验证码
-fileprivate let vertifyCode = "http://121.40.108.71/zuliao/index.php/Sms/send"
+fileprivate let vertifyCode = "http://xxj.yzszsf.com/index.php/Sms/send"
 //登入
-fileprivate let login = "http://121.40.108.71/zuliao/technician.php/User/login"
+fileprivate let login = "http://xxj.yzszsf.com/technician.php/User/login"
 //找回密码
-fileprivate let findPassword = "http://121.40.108.71/zuliao/technician.php/User/reset"
+fileprivate let findPassword = "http://xxj.yzszsf.com/technician.php/User/reset"
 //我的接单
-fileprivate let getMyOrder = "http://121.40.108.71/zuliao/technician.php/Order"
+fileprivate let getMyOrder = "http://xxj.yzszsf.com/technician.php/Order"
 //修改自我介绍（技师）
-fileprivate let tecInfo = "http://121.40.108.71/zuliao/technician.php/user/saveIntroduce"
+fileprivate let tecInfo = "http://xxj.yzszsf.com/technician.php/user/saveIntroduce"
 //添加项目
-fileprivate let addService = "http://121.40.108.71/zuliao/technician.php/Project/addProject"
+fileprivate let addService = "http://xxj.yzszsf.com/technician.php/Project/addProject"
 //添加项目照片
-fileprivate let addServiceImages = "http://121.40.108.71/zuliao/technician.php/Img/upImg"
+fileprivate let addServiceImages = "http://xxj.yzszsf.com/technician.php/Img/upImg"
 //技师项目
-fileprivate let tecServices = "http://121.40.108.71/zuliao/technician.php/Project"
+fileprivate let tecServices = "http://xxj.yzszsf.com/technician.php/Project"
 //删除项目
-fileprivate let deleteService = "http://121.40.108.71/zuliao/technician.php/Project/delProject"
+fileprivate let deleteService = "http://xxj.yzszsf.com/technician.php/Project/delProject"
 //技师评论
-fileprivate let myComments = "http://121.40.108.71/zuliao/technician.php/Remark"
+fileprivate let myComments = "http://xxj.yzszsf.com/technician.php/Remark"
 //我的已完成获取订单date为空
-fileprivate let myCompleteOrder = "http://121.40.108.71/zuliao/technician.php/Order"
+fileprivate let myCompleteOrder = "http://xxj.yzszsf.com/technician.php/Order"
 //查询余额
-fileprivate let myMoney = "http://121.40.108.71/zuliao/technician.php/User/balance"
+fileprivate let myMoney = "http://xxj.yzszsf.com/technician.php/User/balance"
 //提现
-fileprivate let getCash = "http://121.40.108.71/zuliao/technician.php/User/withdrawalsLog"
+fileprivate let getCash = "http://xxj.yzszsf.com/technician.php/User/withdrawalsLog"
 //上传个人头像
-fileprivate let uploadTecPortraitImg = "http://121.40.108.71/zuliao/technician.php/User/uploadIdCard"
+fileprivate let uploadTecPortraitImg = "http://xxj.yzszsf.com/technician.php/User/uploadIdCard"
 //我的消息
-fileprivate let myMessage = "http://121.40.108.71/zuliao/technician.php/Remark/messsage"
+fileprivate let myMessage = "http://xxj.yzszsf.com/technician.php/Remark/messsage"
 //更改上班状态
-fileprivate let changeState = "http://121.40.108.71/zuliao/technician.php/User/switchStatus"
+fileprivate let changeState = "http://xxj.yzszsf.com/technician.php/User/switchStatus"
 class FootTecRequest: NSObject {
     typealias success = (AnyObject)->()
     typealias failure = (Error)->()
@@ -115,9 +115,8 @@ class FootTecRequest: NSObject {
     }
    
     //登入
-   static  func loginWithPhoneNumber( _ phone:String, password:String, successRes:@escaping success, fail:@escaping failure)  {
-        let para = ["tel":phone,
-                    "password":password]
+   static func loginWithPhoneNumber( _ phone:String, password:String, successRes:@escaping success, fail:@escaping failure)  {
+        let para = ["tel":phone, "password":password]
         XTRequestManager.post(login, parameters: para, responseSeializerType: .default, success: {(response:Any) -> Void in
             
             successRes(response as AnyObject)
@@ -154,7 +153,7 @@ class FootTecRequest: NSObject {
     static func setTecInfo(introduce:String,tecId:String,successRes:@escaping success,fail:@escaping failure){
         let para = ["introduce":introduce,"id":tecId]
         XTRequestManager.post(tecInfo, parameters: para, responseSeializerType: .default, success: {(res) -> Void in
-            successRes(res as AnyObject)
+            successRes(res as Any as AnyObject)
         }, failure: {(err) -> Void in
             fail(err!)
     })
@@ -182,7 +181,6 @@ class FootTecRequest: NSObject {
             
         }, success: {(response:Any) -> Void in
             successResponse(response as AnyObject)
-            
         }, failure: {(err:Error?) -> Void in
             failure(err!)
         })

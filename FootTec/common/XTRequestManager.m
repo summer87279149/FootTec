@@ -46,19 +46,11 @@ responseSeializerType:(NHResponseSeializerType)type
     
     
     [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        // 成功
         if (success) {
             success(responseObject);
         }
-        //        NSLog(@"%@", responseObject);
-        
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        // 失败
         if (failure) {
-//            [MBProgressHUD showError:@"请求超时，请检查网络状况"];
             NSLog(@"请求失败统一返回错误信息:%@",error);
             failure(error);
         }

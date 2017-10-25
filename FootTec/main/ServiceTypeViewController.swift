@@ -16,7 +16,6 @@ class ServiceTypeViewController: BaseUIViewController,UITableViewDelegate,UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "选择服务类型"
-        
         setupTableView()
     }
 

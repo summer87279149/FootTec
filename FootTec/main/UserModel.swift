@@ -17,6 +17,7 @@ class UserModel: NSObject {
     private static let XT_USERSTATUS = "xt_user_status"
     private static let XT_USERINFO = "xt_user_info"
     static let userdefaults = UserDefaults.standard
+    //单例
     static let sharedInstance = UserModel()
     private override init(){}
 

@@ -65,6 +65,7 @@ class MyServiceViewController: BaseUIViewController ,UITableViewDelegate,UITable
 //            self.tableview.reloadData()
 //        })
     }
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -129,7 +130,6 @@ class MyServiceViewController: BaseUIViewController ,UITableViewDelegate,UITable
             showHUDMessage("请检查网络", to: self.view)
         })
     }
-
 }
 extension MyServiceViewController:UITextViewDelegate{
     var count : Int{
